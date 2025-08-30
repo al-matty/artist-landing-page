@@ -17,7 +17,7 @@ You can also integrate a headless CMS (e.g. NetlifyCMS, TinaCMS, or Forestry) fo
 - 📸 Social media buttons (Instagram, TikTok, Facebook, etc.)  
 - ⚡ Powered by Hugo for speed and easy deployment  
 
-## Project Structure
+## 📂 Project Structure
 
 ```
 content/        # Markdown files (optional, e.g. about.md)
