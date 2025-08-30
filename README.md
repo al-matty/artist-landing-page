@@ -2,8 +2,11 @@
 
 A minimal, mobile-friendly landing page template for musicians and bands, built with [Hugo](https://gohugo.io/).  
 This site acts as a central hub for your music, merch, tour dates, and social media links, similar to a "link-in-bio" page.  
+You can also integrate a headless CMS (e.g. NetlifyCMS, TinaCMS, or Forestry) for easy content management without editing files manually.
 
-👉 You can also integrate a headless CMS (e.g. NetlifyCMS, TinaCMS, or Forestry) for easy content management without editing files manually.
+<img src="https://github.com/al-matty/artist-landing-page/blob/main/example.png" alt="Preview" width="200"/>
+
+
 
 ## ✨ Features
 
