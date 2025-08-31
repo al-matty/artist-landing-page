@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ .Site.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Embedded Video -->
+      <div class="video">
+        <iframe
+          width="100%"
+          height="200"
+          src="https://www.youtube.com/embed/VIDEO_ID"
+          frameborder="0"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+
+      <!-- Upcoming Shows -->
+      <h2>Upcoming Shows</h2>
+      <ul class="shows">
+        {{ range .Site.Data.shows }}
+        <li><strong>{{ .date }}</strong> — {{ .venue }}</li>
+        {{ end }}
+      </ul>
+
+      <!-- Links -->
+      <div class="links">
+        {{ range .Site.Data.links }}
+        <a class="btn {{ .type }}" href="{{ .url }}" target="_blank">
+          {{ .name }}
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </body>
+</html>

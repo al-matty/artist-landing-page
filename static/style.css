@@ -1,0 +1,58 @@
+body {
+  font-family: sans-serif;
+  background: #111;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+  padding: 1rem;
+}
+
+h2 {
+  margin-top: 1rem;
+}
+
+ul.shows {
+  list-style: none;
+  padding: 0;
+}
+
+ul.shows li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.links {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: block;
+  padding: 0.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  background: #444;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #666;
+}
+
+.btn.play {
+  background: #1db954;
+} /* Spotify green style */
+.btn.watch {
+  background: #ff0000;
+} /* YouTube red style */
+.btn.follow {
+  background: #4267b2;
+} /* Facebook blue style */
