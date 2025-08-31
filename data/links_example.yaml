@@ -1,0 +1,15 @@
+- name: Spotify
+  url: "https://open.spotify.com/album/..."
+  type: play
+- name: Apple Music
+  url: "https://music.apple.com/..."
+  type: play
+- name: YouTube
+  url: "https://youtube.com/..."
+  type: watch
+- name: Instagram
+  url: "https://instagram.com/..."
+  type: follow
+- name: TikTok
+  url: "https://tiktok.com/..."
+  type: follow
