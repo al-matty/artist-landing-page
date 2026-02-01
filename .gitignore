@@ -1,5 +1,7 @@
+config.toml
 data/links.yaml
 data/shows.yaml
+static/images/
 
 # Hugo build artifacts
 public/
