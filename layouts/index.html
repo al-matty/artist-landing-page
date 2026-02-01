@@ -1,41 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <title>{{ .Site.Title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" />
     <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <!-- Embedded Video -->
-      <div class="video">
-        <iframe
-          width="100%"
-          height="200"
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          frameborder="0"
-          allowfullscreen
-        >
-        </iframe>
+    {{ with .Site.Params.backgroundImage }}
+    <style>
+      @media (min-width: 600px) {
+        .page-wrapper {
+          background-image: url('{{ . }}');
+        }
+      }
+    </style>
+    {{ end }}
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <main class="card-container">
+      <div class="card">
+
+        <!-- Hero Section -->
+        <section class="hero"
+          style="background-image: url('{{ .Site.Params.backgroundImage }}');
+                 --overlay-color: {{ .Site.Params.overlayColor | default "#717A97" }};
+                 --overlay-opacity: {{ .Site.Params.overlayOpacity | default "0" }};">
+          <article>
+
+            {{ with .Site.Params.artworkImage }}
+            <div class="artwork">
+              <img src="{{ . }}" alt="Artwork" />
+            </div>
+            {{ end }}
+
+            {{ with .Site.Params.youtubeID }}
+            <div class="video-wrapper">
+              <iframe title="YouTube Video"
+                      src="https://www.youtube-nocookie.com/embed/{{ . }}?controls=0"
+                      frameborder="0"
+                      allow="encrypted-media"
+                      allowfullscreen></iframe>
+            </div>
+            {{ end }}
+
+            <div class="hero-text">
+              {{ with .Site.Params.artistName }}
+              <h2>{{ . }}</h2>
+              {{ end }}
+
+              {{ with .Site.Params.announcement }}
+              <p>{{ . }}</p>
+              {{ end }}
+
+              {{ with .Site.Params.releaseTitle }}
+              <p><strong>{{ . }}</strong></p>
+              {{ end }}
+
+              {{ with .Site.Data.shows }}
+              <p class="shows-header"><strong>UPCOMING SHOWS</strong></p>
+              {{ range . }}
+              <p class="show-entry">
+                <strong>{{ .date }}</strong>&nbsp;&nbsp;&nbsp;{{ .venue }}
+              </p>
+              {{ end }}
+              {{ end }}
+            </div>
+
+          </article>
+        </section>
+
+        <!-- Diagonal Separator -->
+        <div class="diagonal-separator">
+          <svg xmlns="http://www.w3.org/2000/svg" width="600" height="90"
+               viewBox="0 0 600 90" preserveAspectRatio="none">
+            <g transform="translate(0 -557.344)">
+              <path d="M0,46.269,600,2.344V46.269L0,85.047Z"
+                    transform="translate(0 555)" fill="#fff" opacity="0.33" />
+              <path d="M0,41.017,600,7.4V40.865L0,71.981Z"
+                    transform="translate(0 560.865)" fill="#fff" opacity="0.33" />
+              <path d="M0,38.823l600-22.4v60.68L0,83.857Z"
+                    transform="translate(0 563.487)" fill="#fff" />
+            </g>
+          </svg>
+        </div>
+
+        <!-- Links Section -->
+        <section class="links-section">
+          <div class="links-list">
+            {{ range .Site.Data.links }}
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+               class="link-row">
+              <div class="link-row-inner">
+                <div class="link-logo">
+                  {{ if .logo }}
+                    <img src="{{ .logo }}" alt="{{ .name }}" />
+                  {{ else }}
+                    <span class="link-name-fallback">{{ .name }}</span>
+                  {{ end }}
+                </div>
+                <div class="link-button-wrapper">
+                  <span class="link-button">{{ .type }}</span>
+                </div>
+              </div>
+              {{ with .subtitle }}
+              <div class="link-subtitle">{{ . }}</div>
+              {{ end }}
+            </a>
+            {{ end }}
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <nav class="footer" aria-label="Legal">
+          <div class="footer-divider">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="6"
+                 viewBox="0 0 18 6">
+              <g transform="translate(-179 -887)">
+                <circle cx="1" cy="1" r="1" transform="translate(179 887)" fill="#c9c9de"/>
+                <circle cx="1" cy="1" r="1" transform="translate(195 887)" fill="#c9c9de"/>
+                <circle cx="1" cy="1" r="1" transform="translate(179 891)" fill="#c9c9de"/>
+                <circle cx="1" cy="1" r="1" transform="translate(195 891)" fill="#c9c9de"/>
+                <circle cx="1" cy="1" r="1" transform="translate(183 887)" fill="#c9c9de"/>
+                <circle cx="1" cy="1" r="1" transform="translate(183 891)" fill="#c9c9de"/>
+                <circle cx="1" cy="1" r="1" transform="translate(187 887)" fill="#c9c9de"/>
+                <circle cx="1" cy="1" r="1" transform="translate(187 891)" fill="#c9c9de"/>
+                <circle cx="1" cy="1" r="1" transform="translate(191 887)" fill="#c9c9de"/>
+                <circle cx="1" cy="1" r="1" transform="translate(191 891)" fill="#c9c9de"/>
+              </g>
+            </svg>
+          </div>
+          <ul>
+            <li>
+              <a href="#" id="cookie-settings-link">Cookies</a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog"
+       aria-label="Cookie consent" hidden>
+    <div class="cookie-banner-inner">
+      <h3>Privacy Preference Center</h3>
+      <p>When you visit any website, it may store or retrieve information on your
+         browser, mostly in the form of cookies. This information might be about you,
+         your preferences or your device and is mostly used to make the site work as
+         you expect it to. Because we respect your right to privacy, you can choose
+         not to allow some types of cookies.</p>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <span>Strictly Necessary Cookies</span>
+          <span class="cookie-toggle always-on">Always Active</span>
+        </div>
+        <p class="cookie-category-desc">Essential for the website to function.
+           Cannot be disabled.</p>
       </div>
 
-      <!-- Upcoming Shows -->
-      <h2>Upcoming Shows</h2>
-      <ul class="shows">
-        {{ range .Site.Data.shows }}
-        <li><strong>{{ .date }}</strong> — {{ .venue }}</li>
-        {{ end }}
-      </ul>
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <label for="cookie-performance">Performance Cookies</label>
+          <label class="cookie-switch">
+            <input type="checkbox" id="cookie-performance" />
+            <span class="cookie-slider"></span>
+          </label>
+        </div>
+        <p class="cookie-category-desc">Help us understand how visitors
+           interact with the website.</p>
+      </div>
 
-      <!-- Links -->
-      <div class="links">
-        {{ range .Site.Data.links }}
-        <a class="btn {{ .type }}" href="{{ .url }}" target="_blank">
-          {{ .name }}
-        </a>
-        {{ end }}
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <label for="cookie-targeting">Targeting Cookies</label>
+          <label class="cookie-switch">
+            <input type="checkbox" id="cookie-targeting" />
+            <span class="cookie-slider"></span>
+          </label>
+        </div>
+        <p class="cookie-category-desc">Used to deliver relevant
+           advertisements.</p>
+      </div>
+
+      {{ with .Site.Params.cookieMoreInfoURL }}
+      <p class="cookie-more-info">
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer">More information</a>
+      </p>
+      {{ end }}
+
+      <div class="cookie-actions">
+        <button id="cookie-accept-all" class="cookie-btn cookie-btn-primary">Allow All</button>
+        <button id="cookie-reject-all" class="cookie-btn">Reject All</button>
+        <button id="cookie-confirm" class="cookie-btn">Confirm My Choices</button>
       </div>
     </div>
-  </body>
+  </div>
+
+  <script src="/cookie.js"></script>
+</body>
 </html>

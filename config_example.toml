@@ -1,0 +1,14 @@
+baseURL = "https://yourband.github.io/"
+languageCode = "en-us"
+title = "Your Band Name"
+
+[params]
+  artistName = "Your Band Name"
+  announcement = "*New Single December 2023*"
+  releaseTitle = "Album Title"
+  youtubeID = "dQw4w9WgXcQ"
+  artworkImage = "/images/artwork.jpg"
+  backgroundImage = "/images/background.jpg"
+  overlayColor = "#717A97"
+  overlayOpacity = "0"
+  cookieMoreInfoURL = "https://example.com/privacy"

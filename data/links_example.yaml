@@ -1,15 +1,45 @@
 - name: Spotify
   url: "https://open.spotify.com/album/..."
-  type: play
+  type: Play
+  logo: "/images/logos/spotify.png"
+
 - name: Apple Music
   url: "https://music.apple.com/..."
-  type: play
+  type: Play
+  logo: "/images/logos/apple-music.png"
+
+- name: Amazon Music
+  url: "https://music.amazon.com/..."
+  type: Play
+  logo: "/images/logos/amazon-music.png"
+
 - name: YouTube
   url: "https://youtube.com/..."
-  type: watch
+  type: Watch
+  logo: "/images/logos/youtube.png"
+
+- name: Official Store
+  url: "https://yourstore.com/..."
+  type: "CDs & Merch"
+  logo: "/images/logos/store.png"
+
 - name: Instagram
   url: "https://instagram.com/..."
-  type: follow
+  type: Follow
+  logo: "/images/logos/instagram.png"
+
 - name: TikTok
   url: "https://tiktok.com/..."
-  type: follow
+  type: Follow
+  logo: "/images/logos/tiktok.png"
+
+- name: Facebook
+  url: "https://facebook.com/..."
+  type: Follow
+  logo: "/images/logos/facebook.png"
+
+- name: Concert Tickets
+  url: "https://tickets.example.com/..."
+  type: Next Show
+  logo: "/images/logos/tickets.png"
+  subtitle: "27.12. Venue Name City"
