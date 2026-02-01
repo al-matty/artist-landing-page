@@ -1,0 +1,50 @@
+- name: Spotify
+  url: "https://open.spotify.com/album/34RMeCAqKS68who3phqGBr"
+  type: Play
+  logo: "/images/logos/spotify.png"
+
+- name: Apple Music
+  url: "https://geo.itunes.apple.com/at/album/id1675591818?app=music"
+  type: Play
+  logo: "/images/logos/apple-music.png"
+
+- name: Amazon Music
+  url: "https://music.amazon.fr/albums/B0BXFBRHZP"
+  type: Play
+  logo: "/images/logos/amazon-music.png"
+
+- name: Deezer
+  url: "https://www.deezer.com/album/413876357"
+  type: Play
+  logo: "/images/logos/deezer.png"
+
+- name: YouTube
+  url: "https://www.youtube.com/@BAXTERmelodicpunk"
+  type: Watch
+  logo: "/images/logos/youtube.png"
+
+- name: Official Store
+  url: "https://baxterpunk.bandcamp.com/music/"
+  type: "CDs & Merch"
+  logo: "/images/logos/store.png"
+
+- name: Instagram
+  url: "https://www.instagram.com/baxterpunk/"
+  type: Follow
+  logo: "/images/logos/instagram.png"
+
+- name: TikTok
+  url: "https://www.tiktok.com/@baxter_punk"
+  type: Follow
+  logo: "/images/logos/tiktok.png"
+
+- name: Facebook
+  url: "https://www.facebook.com/baxter.punk"
+  type: Follow
+  logo: "/images/logos/facebook.png"
+
+- name: Concert Tickets
+  url: "https://loveyourartist.com/de/events/loaded-baxter-snerft-weinheim-W54Z6B"
+  type: Next Show
+  logo: "/images/logos/tickets.png"
+  subtitle: "26.02. Café Central Weinheim"

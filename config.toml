@@ -1,0 +1,14 @@
+baseURL = "https://al-matty.github.io/artist-landing-page/"
+languageCode = "de"
+title = "Baxter"
+
+[params]
+  artistName = "Baxter"
+  announcement = "*Latest Album*"
+  releaseTitle = "Between Punk And Bourgeoisie"
+  youtubeID = "iOP_eJ321Po"
+  artworkImage = "/images/artwork.jpg"
+  backgroundImage = "/images/background.jpg"
+  overlayColor = "#717A97"
+  overlayOpacity = "0"
+  cookieMoreInfoURL = "https://example.com/privacy"
