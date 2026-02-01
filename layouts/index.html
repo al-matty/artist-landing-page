@@ -7,12 +7,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="{{ "style.css" | relURL }}" />
     {{ with .Site.Params.backgroundImage }}
     <style>
       @media (min-width: 600px) {
         .page-wrapper {
-          background-image: url('{{ . }}');
+          background-image: url('{{ . | relURL }}');
         }
       }
     </style>
@@ -26,14 +26,14 @@
 
         <!-- Hero Section -->
         <section class="hero"
-          style="background-image: url('{{ .Site.Params.backgroundImage }}');
+          style="background-image: url('{{ .Site.Params.backgroundImage | relURL }}');
                  --overlay-color: {{ .Site.Params.overlayColor | default "#717A97" }};
                  --overlay-opacity: {{ .Site.Params.overlayOpacity | default "0" }};">
           <article>
 
             {{ with .Site.Params.artworkImage }}
             <div class="artwork">
-              <img src="{{ . }}" alt="Artwork" />
+              <img src="{{ . | relURL }}" alt="Artwork" />
             </div>
             {{ end }}
 
@@ -97,7 +97,7 @@
               <div class="link-row-inner">
                 <div class="link-logo">
                   {{ if .logo }}
-                    <img src="{{ .logo }}" alt="{{ .name }}" />
+                    <img src="{{ .logo | relURL }}" alt="{{ .name }}" />
                   {{ else }}
                     <span class="link-name-fallback">{{ .name }}</span>
                   {{ end }}
@@ -202,6 +202,6 @@
     </div>
   </div>
 
-  <script src="/cookie.js"></script>
+  <script src="{{ "cookie.js" | relURL }}"></script>
 </body>
 </html>
