@@ -1,5 +1,11 @@
 data/links.yaml
 data/shows.yaml
 
-# macOS
+# Hugo build artifacts
+public/
+.hugo_build.lock
+
+# macOS, LLM
 .DS_Store
+CLAUDE*.md
+/CLAUDE
